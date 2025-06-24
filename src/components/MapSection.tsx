@@ -1,9 +1,26 @@
 
 import React, { useState } from 'react';
 import { MapPin, Layers, Info, Download } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const MapSection = () => {
   const [activeView, setActiveView] = useState('interactive');
+  const { toast } = useToast();
+
+  const handleExportMap = () => {
+    // Create a temporary link to download the interactive map HTML file
+    const link = document.createElement('a');
+    link.href = '/interactive_predicted_index_map_2025.html';
+    link.download = 'hawaii_health_equity_map_2025.html';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Map Downloaded",
+      description: "The interactive map has been downloaded to your device.",
+    });
+  };
 
   return (
     <section id="map" className="py-20 bg-gray-50">
@@ -51,7 +68,10 @@ const MapSection = () => {
                   <Info className="w-4 h-4" />
                   <span>Map Guide</span>
                 </button>
-                <button className="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors">
+                <button 
+                  onClick={handleExportMap}
+                  className="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors"
+                >
                   <Download className="w-4 h-4" />
                   <span>Export Map</span>
                 </button>

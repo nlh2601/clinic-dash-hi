@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Header from '../components/Header';
+import NavigationBar from '../components/NavigationBar';
 import HeroSection from '../components/HeroSection';
 import MapSection from '../components/MapSection';
 import InsightsSection from '../components/InsightsSection';
@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <NavigationBar />
       <HeroSection />
       <MapSection />
       <InsightsSection />

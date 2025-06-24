@@ -7,8 +7,8 @@ const InsightsSection = () => {
     {
       icon: AlertTriangle,
       title: "High-Risk Areas Identified",
-      value: "23 ZIP codes",
-      description: "Predicted to have Health Equity Index below 0.4 in 2025",
+      value: "28 ZIP codes",
+      description: "Predicted to have Health Equity Index above 20.0 in 2025",
       trend: "concern",
       color: "red"
     },
@@ -23,7 +23,7 @@ const InsightsSection = () => {
     {
       icon: TrendingDown,
       title: "Areas of Decline",
-      value: "12 ZIP codes",
+      value: "17 ZIP codes",
       description: "Require immediate policy intervention and resource allocation",
       trend: "negative",
       color: "orange"
@@ -31,7 +31,7 @@ const InsightsSection = () => {
     {
       icon: Target,
       title: "Priority Targets",
-      value: "8 communities",
+      value: "3 communities",
       description: "Rural and underserved areas with the greatest predicted impact",
       trend: "focus",
       color: "blue"
@@ -82,19 +82,19 @@ const InsightsSection = () => {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">XGBoost Accuracy</span>
-                <span className="text-xl font-semibold text-blue-600">87.3%</span>
+                <span className="text-xl font-semibold text-blue-600">65.12%</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Cross-Validation Score</span>
-                <span className="text-xl font-semibold text-teal-600">0.841</span>
+                <span className="text-gray-600">RMSE score</span>
+                <span className="text-xl font-semibold text-teal-600">16.58</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">Training Data Points</span>
-                <span className="text-xl font-semibold text-gray-900">2,847</span>
+                <span className="text-xl font-semibold text-gray-900">4750</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">Feature Variables</span>
-                <span className="text-xl font-semibold text-gray-900">23</span>
+                <span className="text-xl font-semibold text-gray-900">50</span>
               </div>
             </div>
           </div>

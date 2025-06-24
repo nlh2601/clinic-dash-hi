@@ -89,10 +89,16 @@ const AboutSection = () => {
             Collaborate with us or access the underlying data and methodology.
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors flex items-center space-x-2">
-              <Github className="w-5 h-5" />
-              <span>View Source Code</span>
-            </button>
+              <a
+                href="https://github.com/nlh2601/hawaii-equity-compass-forecast-20/tree/main"
+                target="_blank"
+                rel="noopener noreferrer"
+               >
+                <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors flex items-center space-x-2">
+                  <Github className="w-5 h-5" />
+                  <span>View Source Code</span>
+                </button>
+              </a>
             <button className="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors flex items-center space-x-2">
               <Mail className="w-5 h-5" />
               <span>Contact Team</span>

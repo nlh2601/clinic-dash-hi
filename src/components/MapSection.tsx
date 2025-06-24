@@ -91,15 +91,15 @@ const MapSection = () => {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-green-500 rounded"></div>
-                  <span className="text-sm text-gray-600">High Equity (0.8-1.0)</span>
+                  <span className="text-sm text-gray-600">High Equity (0.0–19.9)</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-yellow-500 rounded"></div>
-                  <span className="text-sm text-gray-600">Medium Equity (0.5-0.8)</span>
+                  <span className="text-sm text-gray-600">Medium Equity (20.0–49.9)</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-red-500 rounded"></div>
-                  <span className="text-sm text-gray-600">Low Equity (0.0-0.5)</span>
+                  <span className="text-sm text-gray-600">Low Equity (50.0-100.0)</span>
                 </div>
               </div>
             </div>

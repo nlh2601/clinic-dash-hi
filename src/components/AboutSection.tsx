@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Github, Mail, ExternalLink, Database } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
   return (
@@ -99,10 +100,12 @@ const AboutSection = () => {
                   <span>View Source Code</span>
                 </button>
               </a>
-            <button className="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors flex items-center space-x-2">
-              <Mail className="w-5 h-5" />
-              <span>Contact Team</span>
-            </button>
+            <Link to="/contact">
+              <button className="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors flex items-center space-x-2">
+                <Mail className="w-5 h-5" />
+                <span>Contact Team</span>
+              </button>
+            </Link>
             <button className="bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-800 transition-colors flex items-center space-x-2">
               <Database className="w-5 h-5" />
               <span>Access Data</span>

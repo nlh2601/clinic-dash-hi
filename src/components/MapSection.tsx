@@ -61,19 +61,12 @@ const MapSection = () => {
 
           <div className="relative">
             {activeView === 'interactive' ? (
-              <div className="h-96 md:h-[600px] bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Interactive Folium Map</h3>
-                  <p className="text-gray-600 mb-4">Your interactive map with tooltips and hover effects will be embedded here</p>
-                  <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 max-w-md mx-auto">
-                    <p className="text-sm text-gray-500">
-                      Integration point for your Folium map HTML export or iframe
-                    </p>
-                  </div>
-                </div>
+             <div className="h-96 md:h-[600px]">
+                <iframe
+                  src="/interactive_predicted_index_map_2025.html"
+                  title="Predicted Health Equity Map 2025"
+                  className="w-full h-full border-0 rounded-b-2xl"
+                />
               </div>
             ) : (
               <div className="h-96 md:h-[600px] bg-gradient-to-br from-gray-100 to-blue-100 flex items-center justify-center">

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Target, Eye, Heart, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 
 const About = () => {

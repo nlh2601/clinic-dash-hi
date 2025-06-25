@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BarChart3, Download, Map, TrendingUp, Users, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 
 const Data = () => {

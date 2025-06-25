@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
 import NavigationBar from '../components/NavigationBar';
 

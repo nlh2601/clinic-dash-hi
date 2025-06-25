@@ -106,10 +106,12 @@ const AboutSection = () => {
                 <span>Contact Team</span>
               </button>
             </Link>
-            <button className="bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-800 transition-colors flex items-center space-x-2">
-              <Database className="w-5 h-5" />
-              <span>Access Data</span>
-            </button>
+            <Link to="/data">
+              <button className="bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-800 transition-colors flex items-center space-x-2">
+                <Database className="w-5 h-5" />
+                <span>Access Data</span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -19,6 +19,25 @@ const About = () => {
           </p>
         </section>
 
+        {/* Hawaii Image Section */}
+        <section className="mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1542259009477-d625272157b7?w=1200&h=400&fit=crop" 
+              alt="Beautiful Hawaiian landscape with mountains and ocean" 
+              className="w-full h-64 md:h-96 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-teal-900/60 flex items-center justify-center">
+              <div className="text-center text-white">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Health Equity in Paradise</h2>
+                <p className="text-lg md:text-xl max-w-2xl mx-auto">
+                  Ensuring every community across Hawaii's beautiful islands has access to quality healthcare and resources.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">

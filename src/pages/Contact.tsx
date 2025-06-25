@@ -28,7 +28,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600">info@healthequityhawaii.org</p>
+                  <p className="text-gray-600">clinicdashhi@gmail.com</p>
                   <p className="text-sm text-gray-500">We typically respond within 24 hours</p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const Contact = () => {
             We welcome collaboration from researchers, policymakers, and community organizations.
           </p>
           <a 
-            href="mailto:info@healthequityhawaii.org?subject=Collaboration Inquiry"
+            href="mailto:clinicdashhi@gmail.com?subject=Collaboration Inquiry"
             className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
             Start a Conversation

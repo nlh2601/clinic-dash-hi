@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Home, Info, Mail, Download } from 'lucide-react';
+import { MapPin, Home, Info, Mail, BarChart3, Users } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NavigationBar = () => {
@@ -10,6 +10,9 @@ const NavigationBar = () => {
   
   const navItems = [
     { path: '/', label: 'Home', icon: Home },
+    { path: '/about', label: 'About', icon: Info },
+    { path: '/data', label: 'Data', icon: BarChart3 },
+    { path: '/team', label: 'Team', icon: Users },
     { path: '/contact', label: 'Contact', icon: Mail },
   ];
 

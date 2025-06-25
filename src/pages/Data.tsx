@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react';
-import { BarChart3, Download, Map, TrendingUp, Users, Activity, Layers, Info } from 'lucide-react';
+import { BarChart3, Download, Map, TrendingUp, Users, Activity, Layers, Info, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 import { useToast } from '@/hooks/use-toast';
 
 const Data = () => {
   const [activeView, setActiveView] = useState('interactive');
+  const [showMapGuide, setShowMapGuide] = useState(false);
   const { toast } = useToast();
 
   const handleExportMap = () => {
@@ -184,7 +185,10 @@ const Data = () => {
               </div>
               
               <div className="flex items-center space-x-3">
-                <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <button 
+                  onClick={() => setShowMapGuide(true)}
+                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
+                >
                   <Info className="w-4 h-4" />
                   <span>Map Guide</span>
                 </button>
@@ -245,6 +249,78 @@ const Data = () => {
             </div>
           </div>
         </section>
+
+        {/* Map Guide Modal */}
+        {showMapGuide && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl max-w-md w-full p-6 relative">
+              <button
+                onClick={() => setShowMapGuide(false)}
+                className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <X className="w-5 h-5 text-gray-500" />
+              </button>
+              
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">How to Use the Map</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Navigate and interact with the Health Equity Index map effectively:
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-blue-600 font-semibold text-xs">1</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Zoom</h4>
+                    <p className="text-sm text-gray-600">Scroll to zoom in and out of the map</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-blue-600 font-semibold text-xs">2</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">View Statistics</h4>
+                    <p className="text-sm text-gray-600">Hover over ZIP codes to see detailed health equity statistics</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-blue-600 font-semibold text-xs">3</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Navigate</h4>
+                    <p className="text-sm text-gray-600">Click and drag to pan around different areas of Hawaii</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-blue-600 font-semibold text-xs">4</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Color Legend</h4>
+                    <p className="text-sm text-gray-600">Use the legend in the bottom-right to understand color coding</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <button
+                  onClick={() => setShowMapGuide(false)}
+                  className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Got it!
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

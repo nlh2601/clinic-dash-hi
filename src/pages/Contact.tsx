@@ -18,6 +18,25 @@ const Contact = () => {
           </p>
         </section>
 
+        {/* Contact Hero Image */}
+        <section className="mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1486312338219-ce68e2c6b95d?w=1200&h=400&fit=crop" 
+              alt="Professional team ready to connect and collaborate" 
+              className="w-full h-64 md:h-96 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-purple-900/60 flex items-center justify-center">
+              <div className="text-center text-white">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+                <p className="text-lg md:text-xl max-w-2xl mx-auto">
+                  Ready to discuss health equity research, share insights, or explore collaboration opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>

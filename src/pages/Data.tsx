@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { BarChart3, Download, Map, TrendingUp, Users, Activity, Layers, Info, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -237,7 +238,7 @@ const Data = () => {
                   <span className="text-sm text-gray-600">High Equity (0.0–19.9)</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-yellow-500 rounded"></div>
+                  <div className="w-4 h-4 bg-pink-200 rounded"></div>
                   <span className="text-sm text-gray-600">Medium Equity (20.0–49.9)</span>
                 </div>
                 <div className="flex items-center space-x-2">

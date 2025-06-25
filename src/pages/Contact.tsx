@@ -22,7 +22,7 @@ const Contact = () => {
         <section className="mb-16">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1486312338219-ce68e2c6b95d?w=1200&h=400&fit=crop" 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=400&fit=crop" 
               alt="Professional team ready to connect and collaborate" 
               className="w-full h-64 md:h-96 object-cover"
             />

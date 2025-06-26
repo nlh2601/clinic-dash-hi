@@ -1,12 +1,11 @@
-
 import React, { useState } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Search, Download } from 'lucide-react';
 
 interface ZipCodeData {
   zipCode: string;
   predicted2025: number;
-  predicted2026: number;
   area: string;
   population: number;
   diabetes2022: number;
@@ -22,54 +21,54 @@ const DataTable = () => {
   const [sortField, setSortField] = useState<keyof ZipCodeData>('zipCode');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
-  // Real data from the CSV provided by the user
+  // Updated data with all the new CSV data
   const zipCodeData: ZipCodeData[] = [
-    { zipCode: '96701', predicted2025: 3.0, predicted2026: 3.1, area: 'Hawaii County', population: 12500, diabetes2022: 13.4, diabetes2021: 10.5, highBloodPressure2021: 31.4, kidneyDisease2021: 2.8, employmentRate: 54.8, disabilityRate: 12.3 },
-    { zipCode: '96703', predicted2025: 15.1, predicted2026: 16.2, area: 'Hawaii County', population: 8900, diabetes2022: 13.3, diabetes2021: 10.5, highBloodPressure2021: 31.5, kidneyDisease2021: 3.1, employmentRate: 50.5, disabilityRate: 12.5 },
-    { zipCode: '96704', predicted2025: 70.9, predicted2026: 72.1, area: 'Hawaii County', population: 15200, diabetes2022: 12.2, diabetes2021: 10.3, highBloodPressure2021: 33.5, kidneyDisease2021: 3.2, employmentRate: 54.7, disabilityRate: 11.7 },
-    { zipCode: '96705', predicted2025: 7.3, predicted2026: 8.5, area: 'Hawaii County', population: 9800, diabetes2022: 12.8, diabetes2021: 9.9, highBloodPressure2021: 27.2, kidneyDisease2021: 2.8, employmentRate: 71.5, disabilityRate: 10.3 },
-    { zipCode: '96706', predicted2025: 3.4, predicted2026: 4.1, area: 'Hawaii County', population: 7600, diabetes2022: 11.2, diabetes2021: 8.5, highBloodPressure2021: 26.7, kidneyDisease2021: 2.3, employmentRate: 61.5, disabilityRate: 11.2 },
-    { zipCode: '96707', predicted2025: 6.2, predicted2026: 7.4, area: 'Hawaii County', population: 11400, diabetes2022: 11.4, diabetes2021: 8.0, highBloodPressure2021: 27.4, kidneyDisease2021: 2.3, employmentRate: 61.3, disabilityRate: 10.0 },
-    { zipCode: '96708', predicted2025: 35.6, predicted2026: 37.8, area: 'Hawaii County', population: 10200, diabetes2022: 10.3, diabetes2021: 7.0, highBloodPressure2021: 26.5, kidneyDisease2021: 2.6, employmentRate: 61.3, disabilityRate: 8.2 },
-    { zipCode: '96710', predicted2025: 26.6, predicted2026: 28.2, area: 'Hawaii County', population: 8700, diabetes2022: 12.5, diabetes2021: 12.1, highBloodPressure2021: 32.8, kidneyDisease2021: 3.6, employmentRate: 47.0, disabilityRate: 23.4 },
-    { zipCode: '96712', predicted2025: 16.9, predicted2026: 18.1, area: 'Hawaii County', population: 13100, diabetes2022: 11.2, diabetes2021: 7.7, highBloodPressure2021: 30.2, kidneyDisease2021: 2.5, employmentRate: 57.6, disabilityRate: 12.3 },
-    { zipCode: '96713', predicted2025: 31.4, predicted2026: 33.6, area: 'Hawaii County', population: 9500, diabetes2022: 14.0, diabetes2021: 8.9, highBloodPressure2021: 29.8, kidneyDisease2021: 3.1, employmentRate: 45.7, disabilityRate: 15.5 },
-    { zipCode: '96714', predicted2025: 0.0, predicted2026: 0.0, area: 'Hawaii County', population: 8200, diabetes2022: 11.1, diabetes2021: 11.1, highBloodPressure2021: 32.1, kidneyDisease2021: 3.4, employmentRate: 63.2, disabilityRate: 12.3 },
-    { zipCode: '96716', predicted2025: 20.1, predicted2026: 22.3, area: 'Hawaii County', population: 14600, diabetes2022: 14.1, diabetes2021: 10.9, highBloodPressure2021: 31.7, kidneyDisease2021: 3.0, employmentRate: 62.0, disabilityRate: 15.2 },
-    { zipCode: '96717', predicted2025: 12.6, predicted2026: 14.8, area: 'Hawaii County', population: 12800, diabetes2022: 12.2, diabetes2021: 9.7, highBloodPressure2021: 30.0, kidneyDisease2021: 3.0, employmentRate: 61.1, disabilityRate: 12.6 },
-    { zipCode: '96719', predicted2025: 11.1, predicted2026: 13.3, area: 'Hawaii County', population: 9100, diabetes2022: 11.3, diabetes2021: 9.7, highBloodPressure2021: 31.0, kidneyDisease2021: 3.2, employmentRate: 64.7, disabilityRate: 14.1 },
-    { zipCode: '96720', predicted2025: 31.1, predicted2026: 33.5, area: 'Hawaii County', population: 7900, diabetes2022: 12.4, diabetes2021: 11.1, highBloodPressure2021: 31.1, kidneyDisease2021: 3.2, employmentRate: 54.4, disabilityRate: 15.6 },
-    { zipCode: '96722', predicted2025: 54.7, predicted2026: 56.9, area: 'Hawaii County', population: 11200, diabetes2022: 11.6, diabetes2021: 8.1, highBloodPressure2021: 34.9, kidneyDisease2021: 3.1, employmentRate: 51.1, disabilityRate: 15.2 },
-    { zipCode: '96725', predicted2025: 42.8, predicted2026: 44.2, area: 'Hawaii County', population: 9800, diabetes2022: 10.7, diabetes2021: 9.1, highBloodPressure2021: 30.0, kidneyDisease2021: 3.0, employmentRate: 54.5, disabilityRate: 10.4 },
-    { zipCode: '96727', predicted2025: 71.7, predicted2026: 73.1, area: 'Hawaii County', population: 8500, diabetes2022: 11.6, diabetes2021: 10.7, highBloodPressure2021: 31.4, kidneyDisease2021: 3.4, employmentRate: 57.0, disabilityRate: 21.5 },
-    { zipCode: '96728', predicted2025: 29.6, predicted2026: 31.8, area: 'Hawaii County', population: 10900, diabetes2022: 11.9, diabetes2021: 11.4, highBloodPressure2021: 31.6, kidneyDisease2021: 3.5, employmentRate: 63.3, disabilityRate: 16.2 },
-    { zipCode: '96729', predicted2025: 19.7, predicted2026: 21.9, area: 'Hawaii County', population: 6200, diabetes2022: 17.4, diabetes2021: 13.1, highBloodPressure2021: 33.4, kidneyDisease2021: 3.6, employmentRate: 47.3, disabilityRate: 16.4 },
-    { zipCode: '96730', predicted2025: 9.6, predicted2026: 11.2, area: 'Hawaii County', population: 8100, diabetes2022: 10.9, diabetes2021: 9.1, highBloodPressure2021: 30.5, kidneyDisease2021: 2.8, employmentRate: 57.9, disabilityRate: 7.3 },
-    { zipCode: '96734', predicted2025: 3.9, predicted2026: 4.8, area: 'Hawaii County', population: 12400, diabetes2022: 9.7, diabetes2021: 7.3, highBloodPressure2021: 27.7, kidneyDisease2021: 2.5, employmentRate: 52.4, disabilityRate: 10.9 },
-    { zipCode: '96738', predicted2025: 80.7, predicted2026: 82.3, area: 'Hawaii County', population: 7800, diabetes2022: 10.5, diabetes2021: 7.2, highBloodPressure2021: 29.0, kidneyDisease2021: 2.5, employmentRate: 54.8, disabilityRate: 12.2 },
-    { zipCode: '96740', predicted2025: 21.6, predicted2026: 23.8, area: 'Hawaii County', population: 9600, diabetes2022: 10.8, diabetes2021: 8.6, highBloodPressure2021: 30.4, kidneyDisease2021: 2.9, employmentRate: 58.5, disabilityRate: 11.6 },
-    { zipCode: '96743', predicted2025: 33.8, predicted2026: 35.2, area: 'Hawaii County', population: 11800, diabetes2022: 10.6, diabetes2021: 8.8, highBloodPressure2021: 29.7, kidneyDisease2021: 2.9, employmentRate: 59.2, disabilityRate: 12.5 },
-    { zipCode: '96744', predicted2025: 3.5, predicted2026: 4.2, area: 'Hawaii County', population: 13600, diabetes2022: 12.8, diabetes2021: 9.6, highBloodPressure2021: 31.5, kidneyDisease2021: 2.9, employmentRate: 56.7, disabilityRate: 12.0 },
-    { zipCode: '96746', predicted2025: 11.1, predicted2026: 12.7, area: 'Hawaii County', population: 10500, diabetes2022: 11.2, diabetes2021: 8.9, highBloodPressure2021: 29.2, kidneyDisease2021: 2.8, employmentRate: 62.1, disabilityRate: 11.7 },
-    { zipCode: '96748', predicted2025: 52.4, predicted2026: 54.8, area: 'Hawaii County', population: 5900, diabetes2022: 16.2, diabetes2021: 13.5, highBloodPressure2021: 35.2, kidneyDisease2021: 4.0, employmentRate: 48.4, disabilityRate: 15.9 },
-    { zipCode: '96749', predicted2025: 21.0, predicted2026: 23.4, area: 'Hawaii County', population: 7400, diabetes2022: 11.7, diabetes2021: 9.6, highBloodPressure2021: 30.4, kidneyDisease2021: 2.9, employmentRate: 53.9, disabilityRate: 18.2 },
-    { zipCode: '96750', predicted2025: 9.3, predicted2026: 11.1, area: 'Hawaii County', population: 8800, diabetes2022: 11.6, diabetes2021: 9.9, highBloodPressure2021: 29.8, kidneyDisease2021: 3.0, employmentRate: 55.2, disabilityRate: 18.7 },
-    { zipCode: '96753', predicted2025: 22.2, predicted2026: 24.6, area: 'Hawaii County', population: 9200, diabetes2022: 11.3, diabetes2021: 7.5, highBloodPressure2021: 27.0, kidneyDisease2021: 2.7, employmentRate: 60.5, disabilityRate: 10.9 },
-    { zipCode: '96760', predicted2025: 92.7, predicted2026: 94.1, area: 'Hawaii County', population: 4100, diabetes2022: 12.3, diabetes2021: 11.1, highBloodPressure2021: 33.1, kidneyDisease2021: 3.2, employmentRate: 52.3, disabilityRate: 15.1 },
-    { zipCode: '96761', predicted2025: 17.6, predicted2026: 19.8, area: 'Hawaii County', population: 12800, diabetes2022: 11.5, diabetes2021: 8.1, highBloodPressure2021: 25.2, kidneyDisease2021: 2.6, employmentRate: 66.3, disabilityRate: 9.3 },
-    { zipCode: '96762', predicted2025: 10.2, predicted2026: 11.6, area: 'Hawaii County', population: 15600, diabetes2022: 8.2, diabetes2021: 5.3, highBloodPressure2021: 21.6, kidneyDisease2021: 1.7, employmentRate: 62.3, disabilityRate: 8.2 },
-    { zipCode: '96789', predicted2025: 1.8, predicted2026: 2.4, area: 'Hawaii County', population: 18900, diabetes2022: 11.9, diabetes2021: 8.5, highBloodPressure2021: 29.0, kidneyDisease2021: 2.4, employmentRate: 62.2, disabilityRate: 11.0 },
-    { zipCode: '96813', predicted2025: 4.3, predicted2026: 5.1, area: 'Honolulu County', population: 25400, diabetes2022: 12.6, diabetes2021: 10.8, highBloodPressure2021: 29.4, kidneyDisease2021: 3.0, employmentRate: 63.9, disabilityRate: 12.8 },
-    { zipCode: '96814', predicted2025: 13.8, predicted2026: 15.2, area: 'Honolulu County', population: 18700, diabetes2022: 14.6, diabetes2021: 10.8, highBloodPressure2021: 31.7, kidneyDisease2021: 2.9, employmentRate: 66.4, disabilityRate: 11.5 },
-    { zipCode: '96815', predicted2025: 42.0, predicted2026: 43.8, area: 'Honolulu County', population: 21300, diabetes2022: 12.4, diabetes2021: 9.1, highBloodPressure2021: 31.6, kidneyDisease2021: 2.8, employmentRate: 57.7, disabilityRate: 11.4 },
-    { zipCode: '96816', predicted2025: 3.3, predicted2026: 4.1, area: 'Honolulu County', population: 28600, diabetes2022: 13.0, diabetes2021: 10.6, highBloodPressure2021: 30.7, kidneyDisease2021: 3.0, employmentRate: 60.2, disabilityRate: 10.9 },
-    { zipCode: '96817', predicted2025: 32.0, predicted2026: 34.4, area: 'Honolulu County', population: 17900, diabetes2022: 16.5, diabetes2021: 13.8, highBloodPressure2021: 33.8, kidneyDisease2021: 3.4, employmentRate: 55.5, disabilityRate: 15.2 },
-    { zipCode: '96818', predicted2025: 8.0, predicted2026: 9.2, area: 'Honolulu County', population: 31200, diabetes2022: 10.5, diabetes2021: 8.0, highBloodPressure2021: 25.3, kidneyDisease2021: 2.2, employmentRate: 49.9, disabilityRate: 10.3 },
-    { zipCode: '96819', predicted2025: 19.7, predicted2026: 21.1, area: 'Honolulu County', population: 23800, diabetes2022: 14.7, diabetes2021: 11.9, highBloodPressure2021: 30.7, kidneyDisease2021: 3.0, employmentRate: 57.3, disabilityRate: 13.1 },
-    { zipCode: '96821', predicted2025: 1.0, predicted2026: 1.8, area: 'Honolulu County', population: 19400, diabetes2022: 13.3, diabetes2021: 10.0, highBloodPressure2021: 32.8, kidneyDisease2021: 3.1, employmentRate: 57.9, disabilityRate: 11.4 },
-    { zipCode: '96822', predicted2025: 6.4, predicted2026: 7.6, area: 'Honolulu County', population: 22600, diabetes2022: 12.2, diabetes2021: 9.1, highBloodPressure2021: 29.4, kidneyDisease2021: 2.7, employmentRate: 60.6, disabilityRate: 11.4 },
-    { zipCode: '96825', predicted2025: 2.2, predicted2026: 3.4, area: 'Honolulu County', population: 24100, diabetes2022: 12.4, diabetes2021: 9.3, highBloodPressure2021: 31.7, kidneyDisease2021: 2.8, employmentRate: 56.1, disabilityRate: 9.7 },
-    { zipCode: '96826', predicted2025: 11.9, predicted2026: 13.7, area: 'Honolulu County', population: 20800, diabetes2022: 14.3, diabetes2021: 11.3, highBloodPressure2021: 31.3, kidneyDisease2021: 2.9, employmentRate: 62.0, disabilityRate: 14.0 }
+    { zipCode: '96701', predicted2025: 3.0, area: 'Hawaii County', population: 12500, diabetes2022: 13.4, diabetes2021: 10.5, highBloodPressure2021: 31.4, kidneyDisease2021: 2.8, employmentRate: 54.8, disabilityRate: 12.3 },
+    { zipCode: '96703', predicted2025: 15.1, area: 'Hawaii County', population: 8900, diabetes2022: 13.3, diabetes2021: 10.5, highBloodPressure2021: 31.5, kidneyDisease2021: 3.1, employmentRate: 50.5, disabilityRate: 12.5 },
+    { zipCode: '96704', predicted2025: 70.9, area: 'Hawaii County', population: 15200, diabetes2022: 12.2, diabetes2021: 10.3, highBloodPressure2021: 33.5, kidneyDisease2021: 3.2, employmentRate: 54.7, disabilityRate: 11.7 },
+    { zipCode: '96705', predicted2025: 7.3, area: 'Hawaii County', population: 9800, diabetes2022: 12.8, diabetes2021: 9.9, highBloodPressure2021: 27.2, kidneyDisease2021: 2.8, employmentRate: 71.5, disabilityRate: 10.3 },
+    { zipCode: '96706', predicted2025: 3.4, area: 'Hawaii County', population: 7600, diabetes2022: 11.2, diabetes2021: 8.5, highBloodPressure2021: 26.7, kidneyDisease2021: 2.3, employmentRate: 61.5, disabilityRate: 11.2 },
+    { zipCode: '96707', predicted2025: 6.2, area: 'Hawaii County', population: 11400, diabetes2022: 11.4, diabetes2021: 8.0, highBloodPressure2021: 27.4, kidneyDisease2021: 2.3, employmentRate: 61.3, disabilityRate: 10.0 },
+    { zipCode: '96708', predicted2025: 35.6, area: 'Hawaii County', population: 10200, diabetes2022: 10.3, diabetes2021: 7.0, highBloodPressure2021: 26.5, kidneyDisease2021: 2.6, employmentRate: 61.3, disabilityRate: 8.2 },
+    { zipCode: '96710', predicted2025: 26.6, area: 'Hawaii County', population: 8700, diabetes2022: 12.5, diabetes2021: 12.1, highBloodPressure2021: 32.8, kidneyDisease2021: 3.6, employmentRate: 47.0, disabilityRate: 23.4 },
+    { zipCode: '96712', predicted2025: 16.9, area: 'Hawaii County', population: 13100, diabetes2022: 11.2, diabetes2021: 7.7, highBloodPressure2021: 30.2, kidneyDisease2021: 2.5, employmentRate: 57.6, disabilityRate: 12.3 },
+    { zipCode: '96713', predicted2025: 31.4, area: 'Hawaii County', population: 9500, diabetes2022: 14.0, diabetes2021: 8.9, highBloodPressure2021: 29.8, kidneyDisease2021: 3.1, employmentRate: 45.7, disabilityRate: 15.5 },
+    { zipCode: '96714', predicted2025: 0.0, area: 'Hawaii County', population: 8200, diabetes2022: 11.1, diabetes2021: 11.1, highBloodPressure2021: 32.1, kidneyDisease2021: 3.4, employmentRate: 63.2, disabilityRate: 12.3 },
+    { zipCode: '96716', predicted2025: 20.1, area: 'Hawaii County', population: 14600, diabetes2022: 14.1, diabetes2021: 10.9, highBloodPressure2021: 31.7, kidneyDisease2021: 3.0, employmentRate: 62.0, disabilityRate: 15.2 },
+    { zipCode: '96717', predicted2025: 12.6, area: 'Hawaii County', population: 12800, diabetes2022: 12.2, diabetes2021: 9.7, highBloodPressure2021: 30.0, kidneyDisease2021: 3.0, employmentRate: 61.1, disabilityRate: 12.6 },
+    { zipCode: '96719', predicted2025: 11.1, area: 'Hawaii County', population: 9100, diabetes2022: 11.3, diabetes2021: 9.7, highBloodPressure2021: 31.0, kidneyDisease2021: 3.2, employmentRate: 64.7, disabilityRate: 14.1 },
+    { zipCode: '96720', predicted2025: 31.1, area: 'Hawaii County', population: 7900, diabetes2022: 12.4, diabetes2021: 11.1, highBloodPressure2021: 31.1, kidneyDisease2021: 3.2, employmentRate: 54.4, disabilityRate: 15.6 },
+    { zipCode: '96722', predicted2025: 54.7, area: 'Hawaii County', population: 11200, diabetes2022: 11.6, diabetes2021: 8.1, highBloodPressure2021: 34.9, kidneyDisease2021: 3.1, employmentRate: 51.1, disabilityRate: 15.2 },
+    { zipCode: '96725', predicted2025: 42.8, area: 'Hawaii County', population: 9800, diabetes2022: 10.7, diabetes2021: 9.1, highBloodPressure2021: 30.0, kidneyDisease2021: 3.0, employmentRate: 54.5, disabilityRate: 10.4 },
+    { zipCode: '96727', predicted2025: 71.7, area: 'Hawaii County', population: 8500, diabetes2022: 11.6, diabetes2021: 10.7, highBloodPressure2021: 31.4, kidneyDisease2021: 3.4, employmentRate: 57.0, disabilityRate: 21.5 },
+    { zipCode: '96728', predicted2025: 29.6, area: 'Hawaii County', population: 10900, diabetes2022: 11.9, diabetes2021: 11.4, highBloodPressure2021: 31.6, kidneyDisease2021: 3.5, employmentRate: 63.3, disabilityRate: 16.2 },
+    { zipCode: '96729', predicted2025: 19.7, area: 'Hawaii County', population: 6200, diabetes2022: 17.4, diabetes2021: 13.1, highBloodPressure2021: 33.4, kidneyDisease2021: 3.6, employmentRate: 47.3, disabilityRate: 16.4 },
+    { zipCode: '96730', predicted2025: 9.6, area: 'Hawaii County', population: 8100, diabetes2022: 10.9, diabetes2021: 9.1, highBloodPressure2021: 30.5, kidneyDisease2021: 2.8, employmentRate: 57.9, disabilityRate: 7.3 },
+    { zipCode: '96734', predicted2025: 3.9, area: 'Hawaii County', population: 12400, diabetes2022: 9.7, diabetes2021: 7.3, highBloodPressure2021: 27.7, kidneyDisease2021: 2.5, employmentRate: 52.4, disabilityRate: 10.9 },
+    { zipCode: '96738', predicted2025: 80.7, area: 'Hawaii County', population: 7800, diabetes2022: 10.5, diabetes2021: 7.2, highBloodPressure2021: 29.0, kidneyDisease2021: 2.5, employmentRate: 54.8, disabilityRate: 12.2 },
+    { zipCode: '96740', predicted2025: 21.6, area: 'Hawaii County', population: 9600, diabetes2022: 10.8, diabetes2021: 8.6, highBloodPressure2021: 30.4, kidneyDisease2021: 2.9, employmentRate: 58.5, disabilityRate: 11.6 },
+    { zipCode: '96743', predicted2025: 33.8, area: 'Hawaii County', population: 11800, diabetes2022: 10.6, diabetes2021: 8.8, highBloodPressure2021: 29.7, kidneyDisease2021: 2.9, employmentRate: 59.2, disabilityRate: 12.5 },
+    { zipCode: '96744', predicted2025: 3.5, area: 'Hawaii County', population: 13600, diabetes2022: 12.8, diabetes2021: 9.6, highBloodPressure2021: 31.5, kidneyDisease2021: 2.9, employmentRate: 56.7, disabilityRate: 12.0 },
+    { zipCode: '96746', predicted2025: 11.1, area: 'Hawaii County', population: 10500, diabetes2022: 11.2, diabetes2021: 8.9, highBloodPressure2021: 29.2, kidneyDisease2021: 2.8, employmentRate: 62.1, disabilityRate: 11.7 },
+    { zipCode: '96748', predicted2025: 52.4, area: 'Hawaii County', population: 5900, diabetes2022: 16.2, diabetes2021: 13.5, highBloodPressure2021: 35.2, kidneyDisease2021: 4.0, employmentRate: 48.4, disabilityRate: 15.9 },
+    { zipCode: '96749', predicted2025: 21.0, area: 'Hawaii County', population: 7400, diabetes2022: 11.7, diabetes2021: 9.6, highBloodPressure2021: 30.4, kidneyDisease2021: 2.9, employmentRate: 53.9, disabilityRate: 18.2 },
+    { zipCode: '96750', predicted2025: 9.3, area: 'Hawaii County', population: 8800, diabetes2022: 11.6, diabetes2021: 9.9, highBloodPressure2021: 29.8, kidneyDisease2021: 3.0, employmentRate: 55.2, disabilityRate: 18.7 },
+    { zipCode: '96753', predicted2025: 22.2, area: 'Hawaii County', population: 9200, diabetes2022: 11.3, diabetes2021: 7.5, highBloodPressure2021: 27.0, kidneyDisease2021: 2.7, employmentRate: 60.5, disabilityRate: 10.9 },
+    { zipCode: '96760', predicted2025: 92.7, area: 'Hawaii County', population: 4100, diabetes2022: 12.3, diabetes2021: 11.1, highBloodPressure2021: 33.1, kidneyDisease2021: 3.2, employmentRate: 52.3, disabilityRate: 15.1 },
+    { zipCode: '96761', predicted2025: 17.6, area: 'Hawaii County', population: 12800, diabetes2022: 11.5, diabetes2021: 8.1, highBloodPressure2021: 25.2, kidneyDisease2021: 2.6, employmentRate: 66.3, disabilityRate: 9.3 },
+    { zipCode: '96762', predicted2025: 10.2, area: 'Hawaii County', population: 15600, diabetes2022: 8.2, diabetes2021: 5.3, highBloodPressure2021: 21.6, kidneyDisease2021: 1.7, employmentRate: 62.3, disabilityRate: 8.2 },
+    { zipCode: '96789', predicted2025: 1.8, area: 'Hawaii County', population: 18900, diabetes2022: 11.9, diabetes2021: 8.5, highBloodPressure2021: 29.0, kidneyDisease2021: 2.4, employmentRate: 62.2, disabilityRate: 11.0 },
+    { zipCode: '96813', predicted2025: 4.3, area: 'Honolulu County', population: 25400, diabetes2022: 12.6, diabetes2021: 10.8, highBloodPressure2021: 29.4, kidneyDisease2021: 3.0, employmentRate: 63.9, disabilityRate: 12.8 },
+    { zipCode: '96814', predicted2025: 13.8, area: 'Honolulu County', population: 18700, diabetes2022: 14.6, diabetes2021: 10.8, highBloodPressure2021: 31.7, kidneyDisease2021: 2.9, employmentRate: 66.4, disabilityRate: 11.5 },
+    { zipCode: '96815', predicted2025: 42.0, area: 'Honolulu County', population: 21300, diabetes2022: 12.4, diabetes2021: 9.1, highBloodPressure2021: 31.6, kidneyDisease2021: 2.8, employmentRate: 57.7, disabilityRate: 11.4 },
+    { zipCode: '96816', predicted2025: 3.3, area: 'Honolulu County', population: 28600, diabetes2022: 13.0, diabetes2021: 10.6, highBloodPressure2021: 30.7, kidneyDisease2021: 3.0, employmentRate: 60.2, disabilityRate: 10.9 },
+    { zipCode: '96817', predicted2025: 32.0, area: 'Honolulu County', population: 17900, diabetes2022: 16.5, diabetes2021: 13.8, highBloodPressure2021: 33.8, kidneyDisease2021: 3.4, employmentRate: 55.5, disabilityRate: 15.2 },
+    { zipCode: '96818', predicted2025: 8.0, area: 'Honolulu County', population: 31200, diabetes2022: 10.5, diabetes2021: 8.0, highBloodPressure2021: 25.3, kidneyDisease2021: 2.2, employmentRate: 49.9, disabilityRate: 10.3 },
+    { zipCode: '96819', predicted2025: 19.7, area: 'Honolulu County', population: 23800, diabetes2022: 14.7, diabetes2021: 11.9, highBloodPressure2021: 30.7, kidneyDisease2021: 3.0, employmentRate: 57.3, disabilityRate: 13.1 },
+    { zipCode: '96821', predicted2025: 1.0, area: 'Honolulu County', population: 19400, diabetes2022: 13.3, diabetes2021: 10.0, highBloodPressure2021: 32.8, kidneyDisease2021: 3.1, employmentRate: 57.9, disabilityRate: 11.4 },
+    { zipCode: '96822', predicted2025: 6.4, area: 'Honolulu County', population: 22600, diabetes2022: 12.2, diabetes2021: 9.1, highBloodPressure2021: 29.4, kidneyDisease2021: 2.7, employmentRate: 60.6, disabilityRate: 11.4 },
+    { zipCode: '96825', predicted2025: 2.2, area: 'Honolulu County', population: 24100, diabetes2022: 12.4, diabetes2021: 9.3, highBloodPressure2021: 31.7, kidneyDisease2021: 2.8, employmentRate: 56.1, disabilityRate: 9.7 },
+    { zipCode: '96826', predicted2025: 11.9, area: 'Honolulu County', population: 20800, diabetes2022: 14.3, diabetes2021: 11.3, highBloodPressure2021: 31.3, kidneyDisease2021: 2.9, employmentRate: 62.0, disabilityRate: 14.0 }
   ];
 
   const filteredData = zipCodeData.filter(row =>
@@ -110,7 +109,7 @@ const DataTable = () => {
   };
 
   const downloadCSV = () => {
-    const headers = ['ZIP Code', 'Area', 'Population', '2025 Prediction', '2026 Prediction', 'Diabetes 2022', 'High Blood Pressure 2021', 'Employment Rate', 'Equity Level 2025'];
+    const headers = ['ZIP Code', 'Area', 'Population', '2025 Prediction', 'Diabetes 2022', 'High Blood Pressure 2021', 'Employment Rate', 'Equity Level 2025'];
     const csvContent = [
       headers.join(','),
       ...sortedData.map(row => [
@@ -118,7 +117,6 @@ const DataTable = () => {
         row.area,
         row.population,
         row.predicted2025,
-        row.predicted2026,
         row.diabetes2022,
         row.highBloodPressure2021,
         row.employmentRate,
@@ -165,7 +163,7 @@ const DataTable = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
+      <ScrollArea className="h-96">
         <Table>
           <TableHeader>
             <TableRow>
@@ -195,12 +193,6 @@ const DataTable = () => {
               </TableHead>
               <TableHead 
                 className="cursor-pointer hover:bg-gray-50 text-right"
-                onClick={() => handleSort('predicted2026')}
-              >
-                2026 Index {sortField === 'predicted2026' && (sortDirection === 'asc' ? '↑' : '↓')}
-              </TableHead>
-              <TableHead 
-                className="cursor-pointer hover:bg-gray-50 text-right"
                 onClick={() => handleSort('diabetes2022')}
               >
                 Diabetes % {sortField === 'diabetes2022' && (sortDirection === 'asc' ? '↑' : '↓')}
@@ -223,7 +215,6 @@ const DataTable = () => {
                   <TableCell>{row.area}</TableCell>
                   <TableCell className="text-right">{row.population.toLocaleString()}</TableCell>
                   <TableCell className="text-right">{row.predicted2025.toFixed(1)}</TableCell>
-                  <TableCell className="text-right">{row.predicted2026.toFixed(1)}</TableCell>
                   <TableCell className="text-right">{row.diabetes2022.toFixed(1)}%</TableCell>
                   <TableCell className="text-right">{row.employmentRate.toFixed(1)}%</TableCell>
                   <TableCell>
@@ -236,7 +227,7 @@ const DataTable = () => {
             })}
           </TableBody>
         </Table>
-      </div>
+      </ScrollArea>
 
       {sortedData.length === 0 && (
         <div className="p-8 text-center text-gray-500">

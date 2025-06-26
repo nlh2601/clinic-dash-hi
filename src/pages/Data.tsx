@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
-import { BarChart3, Download, Map, TrendingUp, Users, Activity, Layers, Info, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { BarChart3, Download, TrendingUp, Users, Activity, Info, X } from 'lucide-react';
 import NavigationBar from '../components/NavigationBar';
 import DataTable from '../components/DataTable';
+import PredictionsTable from '../components/PredictionsTable';
 import { useToast } from '@/hooks/use-toast';
 
 const Data = () => {
@@ -38,13 +37,6 @@ const Data = () => {
       icon: Users,
       status: "Updated",
       lastUpdated: "November 2024"
-    },
-    {
-      title: "Healthcare Access Patterns",
-      description: "Geographic analysis of healthcare facility accessibility",
-      icon: Map,
-      status: "Analysis",
-      lastUpdated: "October 2024"
     }
   ];
 
@@ -121,7 +113,7 @@ const Data = () => {
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Available Datasets</h2>
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-2 gap-6">
             {datasets.map((dataset, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-4">
@@ -146,12 +138,23 @@ const Data = () => {
           </div>
         </section>
 
+        {/* Predictions Table Section */}
+        <section className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Health Equity Predictions 2025</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Machine learning predictions for health equity index values across Hawaii ZIP codes.
+            </p>
+          </div>
+          <PredictionsTable />
+        </section>
+
         {/* Data Table Section */}
         <section className="mb-16">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Health Equity Dataset</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Health Equity Dataset</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Complete dataset with health indicators, predictions, and demographic information for Hawaii ZIP codes.
+              Comprehensive dataset with health indicators and demographic information for Hawaii ZIP codes.
             </p>
           </div>
           <DataTable />

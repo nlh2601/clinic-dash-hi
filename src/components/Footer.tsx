@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><Link to="/#map" className="text-gray-300 hover:text-white transition-colors">Interactive Map</Link></li>
+              <li><Link to="/data" className="text-gray-300 hover:text-white transition-colors">Interactive Map</Link></li>
               <li><Link to="/data" className="text-gray-300 hover:text-white transition-colors">Data Download</Link></li>
               <li><Link to="/data#methodology" className="text-gray-300 hover:text-white transition-colors">Methodology</Link></li>
               <li><a href="https://github.com/nlh2601/hawaii-equity-compass-forecast-20/tree/main" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Source Code</a></li>

@@ -8,44 +8,44 @@ import NavigationBar from '../components/NavigationBar';
 const Team = () => {
   const teamMembers = [
     {
-      name: "Dr. Alice Johnson",
+      name: "Nathanael Hui",
       role: "Lead Researcher & Project Director",
       bio: "Specializes in public health data analysis and health equity research with over 15 years of experience.",
       email: "alice.johnson@healthequityhawaii.org",
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face",
-      initials: "AJ"
+      initials: "NH"
     },
     {
-      name: "Dr. Bob Williams",
+      name: "Jiho Sung",
       role: "Data Scientist & ML Engineer",
       bio: "Expert in machine learning and predictive modeling for healthcare applications and population health trends.",
       email: "bob.williams@healthequityhawaii.org",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&crop=face",
-      initials: "BW"
+      initials: "JS"
     },
     {
-      name: "Dr. Eva Davis",
+      name: "Taiko Tyau",
       role: "Policy Advisor & Community Liaison",
       bio: "Focuses on translating research findings into actionable policy recommendations for improved health outcomes.",
       email: "eva.davis@healthequityhawaii.org",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=400&fit=crop&crop=face",
-      initials: "ED"
+      initials: "TT"
     },
     {
-      name: "Dr. Michael Chen",
+      name: "Johnny Chen",
       role: "Geographic Information Systems Specialist",
       bio: "Creates and maintains spatial analysis models to visualize health disparities across Hawaiian communities.",
       email: "michael.chen@healthequityhawaii.org",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face",
-      initials: "MC"
+      initials: "JC"
     },
     {
-      name: "Dr. Sarah Nakamura",
+      name: "Ty Sunahara",
       role: "Community Health Researcher",
       bio: "Conducts field research and community outreach to ensure our data reflects real community needs and experiences.",
       email: "sarah.nakamura@healthequityhawaii.org",
       image: "https://images.unsplash.com/photo-1501286353178-1ec881214838?w=400&h=400&fit=crop&crop=face",
-      initials: "SN"
+      initials: "TS"
     }
   ];
 

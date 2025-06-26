@@ -11,7 +11,7 @@ const Team = () => {
       name: "Nathanael Hui",
       role: "Lead Researcher & Project Director",
       bio: "Driven by a passion for health equity, Nathanael leads the development of ClinicDash HI’s predictive model and dashboard. With a strong background in public health data, he oversees project design, data strategy, and machine learning. He’s committed to using technology to close care gaps in underserved communities.",
-      email: "alice.johnson@healthequityhawaii.org",
+      email: "clinicdashhi@gmail.com",
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face",
       initials: "NH"
     },
@@ -19,7 +19,7 @@ const Team = () => {
       name: "Jiho Sung",
       role: "Data Scientist & ML Engineer",
       bio: "Jiho builds and trains the machine learning models powering ClinicDash HI. He specializes in predictive analytics and population health forecasting, helping turn raw data into actionable insights that can improve lives across Hawaii.",
-      email: "bob.williams@healthequityhawaii.org",
+      email: "clinicdashhi@gmail.com",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&crop=face",
       initials: "JS"
     },
@@ -27,7 +27,7 @@ const Team = () => {
       name: "Taiko Tyau",
       role: "Policy Advisor & Community Liaison",
       bio: "Taiko bridges the gap between data and decision-making. She translates ClinicDash’s findings into practical policy recommendations and ensures community voices are heard in our work. Her experience spans public health advocacy and legislative outreach.",
-      email: "eva.davis@healthequityhawaii.org",
+      email: "clinicdashhi@gmail.com",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=400&fit=crop&crop=face",
       initials: "TT"
     },
@@ -35,15 +35,15 @@ const Team = () => {
       name: "Johnny Chen",
       role: "Geographic Information Systems Specialist",
       bio: "Johnny creates spatial visualizations that reveal patterns in healthcare access across Hawaii. He brings ClinicDash’s data to life through interactive maps and geospatial tools, helping stakeholders quickly identify where care is most needed.",
-      email: "michael.chen@healthequityhawaii.org",
+      email: "clinicdashhi@gmail.com",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face",
       initials: "JC"
     },
     {
       name: "Ty Sunahara",
-      role: "Ty grounds ClinicDash’s work in real-world needs. He gathers on-the-ground feedback, engages with local organizations, and ensures our data reflects lived experiences. His work strengthens the link between analytics and authentic community impact.",
-      bio: "Conducts field research and community outreach to ensure our data reflects real community needs and experiences.",
-      email: "sarah.nakamura@healthequityhawaii.org",
+      role: "Community Health Researcher",
+      bio: "Ty grounds ClinicDash’s work in real-world needs. He gathers on-the-ground feedback, engages with local organizations, and ensures our data reflects lived experiences. His work strengthens the link between analytics and authentic community impact.",
+      email: "clinicdashhi@gmail.com",
       image: "https://images.unsplash.com/photo-1501286353178-1ec881214838?w=400&h=400&fit=crop&crop=face",
       initials: "TS"
     }

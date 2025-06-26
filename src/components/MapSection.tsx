@@ -1,15 +1,15 @@
 
 import React, { useState } from 'react';
-import { MapPin, Layers, Info, Download, X } from 'lucide-react';
+import { MapPin, Layers, Info, Download, X, Calendar } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const MapSection = () => {
   const [activeView, setActiveView] = useState('interactive');
+  const [selectedYear, setSelectedYear] = useState('2025');
   const [showMapGuide, setShowMapGuide] = useState(false);
   const { toast } = useToast();
 
   const handleExportMap = () => {
-    // Create a temporary link to download the interactive map HTML file
     const link = document.createElement('a');
     link.href = '/interactive_predicted_index_map_2025.html';
     link.download = 'hawaii_health_equity_map_2025.html';
@@ -23,6 +23,11 @@ const MapSection = () => {
     });
   };
 
+  const staticMapImages = {
+    '2025': '/lovable-uploads/5895107d-8b66-4021-bae1-08e53eff8c9e.png',
+    '2026': '/lovable-uploads/680b5d59-8680-40c4-95ab-874e5292452d.png'
+  };
+
   return (
     <section id="map" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,14 +36,14 @@ const MapSection = () => {
             Interactive Health Equity Map
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Explore predicted 2025 Health Equity Index values across Hawaii's ZIP codes. 
+            Explore predicted Health Equity Index values across Hawaii's ZIP codes. 
             Darker colors indicate areas with greater health equity challenges.
           </p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="border-b border-gray-200 p-6">
-            <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => setActiveView('interactive')}
@@ -65,6 +70,17 @@ const MapSection = () => {
               </div>
               
               <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
+                  <Calendar className="w-4 h-4 text-gray-600" />
+                  <select
+                    value={selectedYear}
+                    onChange={(e) => setSelectedYear(e.target.value)}
+                    className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                  </select>
+                </div>
                 <button 
                   onClick={() => setShowMapGuide(true)}
                   className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
@@ -93,19 +109,12 @@ const MapSection = () => {
                 />
               </div>
             ) : (
-              <div className="h-96 md:h-[600px] bg-gradient-to-br from-gray-100 to-blue-100 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Layers className="w-8 h-8 text-gray-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Static Map Overview</h3>
-                  <p className="text-gray-600 mb-4">High-level view of health equity predictions across all ZIP codes</p>
-                  <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 max-w-md mx-auto">
-                    <p className="text-sm text-gray-500">
-                      Integration point for your static matplotlib/seaborn map
-                    </p>
-                  </div>
-                </div>
+              <div className="h-96 md:h-[600px] bg-gray-100 flex items-center justify-center p-4">
+                <img
+                  src={staticMapImages[selectedYear as keyof typeof staticMapImages]}
+                  alt={`Health Equity Index by ZIP (${selectedYear})`}
+                  className="max-w-full max-h-full object-contain rounded-lg shadow-sm"
+                />
               </div>
             )}
 

@@ -1,9 +1,41 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Github, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, ExternalLink, Download } from 'lucide-react';
 import NavigationBar from '../components/NavigationBar';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
+  const { toast } = useToast();
+
+  const handleDownloadFlyer = () => {
+    // Create a simple flyer download - in a real app, this would be a PDF file
+    const flyerContent = `
+Hawaii Health Equity Index - 2025 Forecast
+
+Key Findings:
+• Comprehensive analysis of health equity across Hawaii ZIP codes
+• Machine learning predictions for 2025-2026
+• Interactive visualization tools
+• Policy recommendations for improvement
+
+Contact: clinicdashhi@gmail.com
+Website: Hawaii Health Equity Index Project
+    `;
+    
+    const blob = new Blob([flyerContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'hawaii_health_equity_flyer.txt';
+    a.click();
+    window.URL.revokeObjectURL(url);
+    
+    toast({
+      title: "Flyer Downloaded",
+      description: "The project flyer has been downloaded to your device.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <NavigationBar />
@@ -92,17 +124,17 @@ const Contact = () => {
                 <ExternalLink className="w-4 h-4 text-gray-400 ml-auto" />
               </a>
               
-              <a 
-                href="#" 
-                className="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+              <button 
+                onClick={handleDownloadFlyer}
+                className="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors w-full"
               >
-                <ExternalLink className="w-6 h-6 text-gray-600" />
-                <div>
-                  <h3 className="font-semibold text-gray-900">Research Papers</h3>
-                  <p className="text-sm text-gray-600">Access our published findings</p>
+                <Download className="w-6 h-6 text-gray-600" />
+                <div className="text-left">
+                  <h3 className="font-semibold text-gray-900">Project Flyer</h3>
+                  <p className="text-sm text-gray-600">Download our research summary</p>
                 </div>
-                <ExternalLink className="w-4 h-4 text-gray-400 ml-auto" />
-              </a>
+                <Download className="w-4 h-4 text-gray-400 ml-auto" />
+              </button>
             </div>
           </div>
         </div>
@@ -114,7 +146,7 @@ const Contact = () => {
             We welcome collaboration from researchers, policymakers, and community organizations.
           </p>
           <a 
-            href="mailto:clinicdashhi@gmail.com?subject=Collaboration Inquiry"
+            href="mailto:clinicdashhi@gmail.com?subject=Collaboration%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20collaborating%20on%20the%20Hawaii%20Health%20Equity%20Index%20project.%0D%0A%0D%0APlease%20let%20me%20know%20how%20we%20can%20work%20together.%0D%0A%0D%0AThank%20you!"
             className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
             Start a Conversation

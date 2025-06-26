@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Github, Mail, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -22,35 +23,48 @@ const Footer = () => {
               and geographic visualization of health equity patterns across Hawaii.
             </p>
             <div className="flex space-x-4">
-              <button className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="https://github.com/nlh2601/hawaii-equity-compass-forecast-20/tree/main"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Github className="w-5 h-5" />
-              </button>
-              <button className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a 
+                href="mailto:clinicdashhi@gmail.com"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Mail className="w-5 h-5" />
-              </button>
-              <button className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a 
+                href="https://github.com/nlh2601/hawaii-equity-compass-forecast-20/tree/main"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <ExternalLink className="w-5 h-5" />
-              </button>
+              </a>
             </div>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Interactive Map</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Data Download</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Methodology</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Source Code</a></li>
+              <li><Link to="/#map" className="text-gray-300 hover:text-white transition-colors">Interactive Map</Link></li>
+              <li><Link to="/data" className="text-gray-300 hover:text-white transition-colors">Data Download</Link></li>
+              <li><Link to="/data#methodology" className="text-gray-300 hover:text-white transition-colors">Methodology</Link></li>
+              <li><a href="https://github.com/nlh2601/hawaii-equity-compass-forecast-20/tree/main" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Source Code</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Data Sources</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Hawaii DOH</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">U.S. Census</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">CDC SVI</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">HRSA Data</a></li>
+              <li><a href="https://health.hawaii.gov/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Hawaii DOH</a></li>
+              <li><a href="https://www.census.gov/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">U.S. Census</a></li>
+              <li><a href="https://www.atsdr.cdc.gov/placeandhealth/svi/index.html" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">CDC SVI</a></li>
+              <li><a href="https://data.hrsa.gov/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">HRSA Data</a></li>
             </ul>
           </div>
         </div>
@@ -63,7 +77,7 @@ const Footer = () => {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Use</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Contact</a>
+              <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact</Link>
             </div>
           </div>
         </div>

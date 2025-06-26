@@ -1,14 +1,12 @@
 
 import React, { useState } from 'react';
-import { BarChart3, Download, Map, TrendingUp, Users, Activity, Layers, Info, X, Calendar } from 'lucide-react';
+import { BarChart3, Download, Map, TrendingUp, Users, Activity, Layers, Info, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 import DataTable from '../components/DataTable';
 import { useToast } from '@/hooks/use-toast';
 
 const Data = () => {
-  const [activeView, setActiveView] = useState('interactive');
-  const [selectedYear, setSelectedYear] = useState('2025');
   const [showMapGuide, setShowMapGuide] = useState(false);
   const { toast } = useToast();
 
@@ -24,11 +22,6 @@ const Data = () => {
       title: "Map Downloaded",
       description: "The interactive map has been downloaded to your device.",
     });
-  };
-
-  const staticMapImages = {
-    '2025': '/lovable-uploads/5895107d-8b66-4021-bae1-08e53eff8c9e.png',
-    '2026': '/lovable-uploads/680b5d59-8680-40c4-95ab-874e5292452d.png'
   };
 
   const datasets = [
@@ -156,9 +149,9 @@ const Data = () => {
         {/* Data Table Section */}
         <section className="mb-16">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">ZIP Code Data</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Health Equity Dataset</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Detailed health equity predictions for Hawaii ZIP codes with interactive sorting and filtering.
+              Complete dataset with health indicators, predictions, and demographic information for Hawaii ZIP codes.
             </p>
           </div>
           <DataTable />
@@ -177,43 +170,7 @@ const Data = () => {
             </p>
             
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => setActiveView('interactive')}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all ${
-                    activeView === 'interactive'
-                      ? 'bg-blue-100 text-blue-700 font-semibold'
-                      : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-                >
-                  <Layers className="w-4 h-4" />
-                  <span>Interactive Map</span>
-                </button>
-                <button
-                  onClick={() => setActiveView('static')}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all ${
-                    activeView === 'static'
-                      ? 'bg-blue-100 text-blue-700 font-semibold'
-                      : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-                >
-                  <Map className="w-4 h-4" />
-                  <span>Static Overview</span>
-                </button>
-              </div>
-              
               <div className="flex items-center space-x-3">
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-4 h-4 text-gray-600" />
-                  <select
-                    value={selectedYear}
-                    onChange={(e) => setSelectedYear(e.target.value)}
-                    className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                  </select>
-                </div>
                 <button 
                   onClick={() => setShowMapGuide(true)}
                   className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
@@ -233,23 +190,13 @@ const Data = () => {
           </div>
 
           <div className="relative">
-            {activeView === 'interactive' ? (
-             <div className="h-96 md:h-[600px]">
-                <iframe
-                  src="/interactive_predicted_index_map_2025.html"
-                  title="Predicted Health Equity Map 2025"
-                  className="w-full h-full border-0 rounded-b-2xl"
-                />
-              </div>
-            ) : (
-              <div className="h-96 md:h-[600px] bg-gray-100 flex items-center justify-center p-4">
-                <img
-                  src={staticMapImages[selectedYear as keyof typeof staticMapImages]}
-                  alt={`Health Equity Index by ZIP (${selectedYear})`}
-                  className="max-w-full max-h-full object-contain rounded-lg shadow-sm"
-                />
-              </div>
-            )}
+            <div className="h-96 md:h-[600px]">
+              <iframe
+                src="/interactive_predicted_index_map_2025.html"
+                title="Predicted Health Equity Map 2025"
+                className="w-full h-full border-0 rounded-b-2xl"
+              />
+            </div>
 
             {/* Legend */}
             <div className="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg border border-gray-200">

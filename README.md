@@ -1,4 +1,4 @@
-#ClinicDash HI 🏥🌺
+ClinicDash HI 🏥🌺
 A machine learning-powered health equity dashboard for Hawaii, visualizing and predicting access to care by ZIP code.
 
 📌 Overview

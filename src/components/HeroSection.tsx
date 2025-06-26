@@ -1,11 +1,13 @@
 
 import React from 'react';
 import { TrendingUp, Users, MapPin, Brain } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
-  const scrollToMap = () => {
-    const element = document.getElementById('map');
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+
+  const goToDataPage = () => {
+    navigate('/data');
   };
 
   return (
@@ -24,7 +26,7 @@ const HeroSection = () => {
               to help policy makers and communities identify areas of concern and prioritize resource allocation.
             </p>
             <button 
-              onClick={scrollToMap}
+              onClick={goToDataPage}
               className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
             >
               Explore Interactive Map

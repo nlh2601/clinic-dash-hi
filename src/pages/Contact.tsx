@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Github, ExternalLink, Download } from 'lucide-react';
+import { Mail, Github, ExternalLink, Download, Instagram } from 'lucide-react';
 import NavigationBar from '../components/NavigationBar';
 import { useToast } from '@/hooks/use-toast';
 
@@ -8,18 +8,41 @@ const Contact = () => {
   const { toast } = useToast();
 
   const handleDownloadFlyer = () => {
-    // Create a simple flyer download - in a real app, this would be a PDF file
     const flyerContent = `
-ClinicDashHi - Hawaii Health Equity Index - 2025 Forecast
+ClinicDashHi - Smarter Healthcare Access for Hawai'i
+A Predictive Dashboard for Underserved Communities
 
-Key Findings:
-• Comprehensive analysis of health equity across Hawaii ZIP codes
-• Machine learning predictions for 2025-2026
-• Interactive visualization tools
-• Policy recommendations for improvement
+Why ClinicDash HI?
+• In Hawai'i, many rural and underserved areas still lack reliable access to health clinics, providers, and education.
+• Decisions to send help are often made without clear data.
+• ClinicDash HI provides areas on where to send help
 
-Contact: clinicdashhi@gmail.com
-Website: ClinicDashHi - Hawaii Health Equity Index Project
+How It Works:
+• Uses real Hawai'i ZIP code data (population, locations, income, insurance rates, etc.)
+• Trains a basic machine learning model to predict and score healthcare needed by code
+• Outputs a map-based dashboard for non-profits to use when planning:
+  - Mobile clinic routes
+  - Tech health outreach
+  - Health education events
+
+Where is help needed most right now?
+Interactive map showing Health Equity Index with color-coded areas indicating healthcare needs across Hawai'i ZIP codes.
+
+Built by Students - Powered by Data.
+We are a studented team combining computer science, healthcare passion, and local knowledge to make access smarter and equitable.
+
+Want to Collaborate?
+We're looking for:
+• Non-profits & Clinics
+• Mentors & Advisors
+• Educators & Students
+
+Contact info:
+Email: clinicdashhi@gmail.com
+Instagram: @808_clinicdashhi
+Website: https://clinicdash-hi.lovable.app/
+
+Hawaii Health Equity Index - 2025 Forecast
     `;
     
     const blob = new Blob([flyerContent], { type: 'text/plain' });
@@ -90,23 +113,20 @@ Website: ClinicDashHi - Hawaii Health Equity Index Project
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-teal-600" />
+                <div className="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Instagram className="w-5 h-5 text-pink-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <p className="text-gray-600">+1 (808) 123-4567</p>
-                  <p className="text-sm text-gray-500">Monday - Friday, 9 AM - 5 PM HST</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                  <p className="text-gray-600">123 Main Street<br />Honolulu, HI 96813</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Instagram</h3>
+                  <a 
+                    href="https://instagram.com/808_clinicdashhi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-pink-600 transition-colors"
+                  >
+                    @808_clinicdashhi
+                  </a>
+                  <p className="text-sm text-gray-500">Follow us for updates and insights</p>
                 </div>
               </div>
             </div>

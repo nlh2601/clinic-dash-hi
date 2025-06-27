@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ const Team = () => {
     {
       name: "Nathanael Hui",
       role: "Lead Researcher & Project Director",
-      bio: "Driven by a passion for health equity, Nathanael leads the development of ClinicDash HI’s predictive model and dashboard. With a strong background in public health data, he oversees project design, data strategy, and machine learning. He’s committed to using technology to close care gaps in underserved communities.",
+      bio: "Driven by a passion for health equity, Nathanael leads the development of ClinicDashHi's predictive model and dashboard. With a strong background in public health data, he oversees project design, data strategy, and machine learning. He's committed to using technology to close care gaps in underserved communities.",
       email: "clinicdashhi@gmail.com",
       image: "/natechef.jpg",
       initials: "NH"
@@ -18,7 +17,7 @@ const Team = () => {
     {
       name: "Jiho Sung",
       role: "Data Scientist & ML Engineer",
-      bio: "Jiho builds and trains the machine learning models powering ClinicDash HI. He specializes in predictive analytics and population health forecasting, helping turn raw data into actionable insights that can improve lives across Hawaii.",
+      bio: "Jiho builds and trains the machine learning models powering ClinicDashHi. He specializes in predictive analytics and population health forecasting, helping turn raw data into actionable insights that can improve lives across Hawaii.",
       email: "clinicdashhi@gmail.com",
       image: "/jihochef.jpg",
       initials: "JS"
@@ -26,7 +25,7 @@ const Team = () => {
     {
       name: "Taiko Tyau",
       role: "Policy Advisor & Community Liaison",
-      bio: "Taiko bridges the gap between data and decision-making. She translates ClinicDash’s findings into practical policy recommendations and ensures community voices are heard in our work. Her experience spans public health advocacy and legislative outreach.",
+      bio: "Taiko bridges the gap between data and decision-making. She translates ClinicDashHi's findings into practical policy recommendations and ensures community voices are heard in our work. Her experience spans public health advocacy and legislative outreach.",
       email: "clinicdashhi@gmail.com",
       image: "/taikochef.jpg",
       initials: "TT"
@@ -34,7 +33,7 @@ const Team = () => {
     {
       name: "Johnny Chen",
       role: "Geographic Information Systems Specialist",
-      bio: "Johnny creates spatial visualizations that reveal patterns in healthcare access across Hawaii. He brings ClinicDash’s data to life through interactive maps and geospatial tools, helping stakeholders quickly identify where care is most needed.",
+      bio: "Johnny creates spatial visualizations that reveal patterns in healthcare access across Hawaii. He brings ClinicDashHi's data to life through interactive maps and geospatial tools, helping stakeholders quickly identify where care is most needed.",
       email: "clinicdashhi@gmail.com",
       image: "/johnnychef.jpg",
       initials: "JC"
@@ -42,7 +41,7 @@ const Team = () => {
     {
       name: "Ty Sunahara",
       role: "Community Health Researcher",
-      bio: "Ty grounds ClinicDash’s work in real-world needs. He gathers on-the-ground feedback, engages with local organizations, and ensures our data reflects lived experiences. His work strengthens the link between analytics and authentic community impact.",
+      bio: "Ty grounds ClinicDashHi's work in real-world needs. He gathers on-the-ground feedback, engages with local organizations, and ensures our data reflects lived experiences. His work strengthens the link between analytics and authentic community impact.",
       email: "clinicdashhi@gmail.com",
       image: "/tychef.jpg",
       initials: "TS"
@@ -55,6 +54,11 @@ const Team = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="text-center mb-16">
+          <div className="mb-4">
+            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent text-lg font-semibold">
+              ClinicDashHi
+            </span>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Team
           </h1>

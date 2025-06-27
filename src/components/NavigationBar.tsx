@@ -25,8 +25,8 @@ const NavigationBar = () => {
               <MapPin className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Hawaii Health Equity Index</h1>
-              <p className="text-sm text-gray-600">2025 Forecast & Visualization</p>
+              <h1 className="text-xl font-bold text-gray-900">ClinicDashHi</h1>
+              <p className="text-sm text-gray-600">Hawaii Health Equity Index - 2025 Forecast</p>
             </div>
           </div>
 

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Github, Mail, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -14,8 +13,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">Hawaii Health Equity Index</h3>
-                <p className="text-gray-400 text-sm">2025 Forecast & Visualization</p>
+                <h3 className="text-lg font-bold">ClinicDashHi</h3>
+                <p className="text-gray-400 text-sm">Hawaii Health Equity Index - 2025 Forecast</p>
               </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
@@ -72,7 +71,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Hawaii Health Equity Index Project. Data used for research and policy analysis.
+              © 2024 ClinicDashHi - Hawaii Health Equity Index Project. Data used for research and policy analysis.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>

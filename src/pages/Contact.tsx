@@ -10,7 +10,7 @@ const Contact = () => {
   const handleDownloadFlyer = () => {
     // Create a simple flyer download - in a real app, this would be a PDF file
     const flyerContent = `
-Hawaii Health Equity Index - 2025 Forecast
+ClinicDashHi - Hawaii Health Equity Index - 2025 Forecast
 
 Key Findings:
 • Comprehensive analysis of health equity across Hawaii ZIP codes
@@ -19,20 +19,20 @@ Key Findings:
 • Policy recommendations for improvement
 
 Contact: clinicdashhi@gmail.com
-Website: Hawaii Health Equity Index Project
+Website: ClinicDashHi - Hawaii Health Equity Index Project
     `;
     
     const blob = new Blob([flyerContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'hawaii_health_equity_flyer.txt';
+    a.download = 'clinicdashhi_hawaii_health_equity_flyer.txt';
     a.click();
     window.URL.revokeObjectURL(url);
     
     toast({
       title: "Flyer Downloaded",
-      description: "The project flyer has been downloaded to your device.",
+      description: "The ClinicDashHi project flyer has been downloaded to your device.",
     });
   };
 
@@ -42,6 +42,11 @@ Website: Hawaii Health Equity Index Project
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="text-center mb-16">
+          <div className="mb-4">
+            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent text-lg font-semibold">
+              ClinicDashHi
+            </span>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Contact Us
           </h1>
@@ -140,13 +145,13 @@ Website: Hawaii Health Equity Index Project
         </div>
 
         <section className="bg-gradient-to-r from-blue-600 to-teal-600 p-12 rounded-2xl text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">Collaborate With Us</h2>
+          <h2 className="text-3xl font-bold mb-4">Collaborate With ClinicDashHi</h2>
           <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
-            Interested in partnering with us or contributing to our health equity research? 
+            Interested in partnering with ClinicDashHi or contributing to our health equity research? 
             We welcome collaboration from researchers, policymakers, and community organizations.
           </p>
           <a 
-            href="mailto:clinicdashhi@gmail.com?subject=Collaboration%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20collaborating%20on%20the%20Hawaii%20Health%20Equity%20Index%20project.%0D%0A%0D%0APlease%20let%20me%20know%20how%20we%20can%20work%20together.%0D%0A%0D%0AThank%20you!"
+            href="mailto:clinicdashhi@gmail.com?subject=ClinicDashHi%20Collaboration%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20collaborating%20on%20the%20ClinicDashHi%20Hawaii%20Health%20Equity%20Index%20project.%0D%0A%0D%0APlease%20let%20me%20know%20how%20we%20can%20work%20together.%0D%0A%0D%0AThank%20you!"
             className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
             Start a Conversation

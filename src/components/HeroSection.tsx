@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TrendingUp, Users, MapPin, Brain } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +14,11 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="text-center lg:text-left">
+            <div className="mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent text-lg font-semibold">
+                ClinicDashHi
+              </span>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Hawaii Health Equity
               <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent block">

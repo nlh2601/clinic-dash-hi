@@ -42,6 +42,8 @@ Prediction: Trained an XGBoost regressor on slope and 2024 values to predict the
 
 Evaluation: Compared predictions with 2025 ground truth from "generated.csv".
 
+Data Used: https://drive.google.com/drive/folders/1FQByYa9tuVZwGRNsiWEm5aJhPNJP7eep?usp=sharing
+
 📚 Data Sources
 U.S. Census American Community Survey (ACS)
 

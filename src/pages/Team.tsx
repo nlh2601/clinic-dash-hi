@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -25,7 +26,7 @@ const Team = () => {
     {
       name: "Taiko Tyau",
       role: "Policy Advisor & Community Liaison",
-      bio: "Taiko bridges the gap between data and decision-making. She translates ClinicDashHi's findings into practical policy recommendations and ensures community voices are heard in our work. Her experience spans public health advocacy and legislative outreach.",
+      bio: "Taiko bridges the gap between data and decision-making. He translates ClinicDashHi's findings into practical policy recommendations and ensures community voices are heard in our work. His experience spans public health advocacy and legislative outreach.",
       email: "clinicdashhi@gmail.com",
       image: "/taikochef.jpg",
       initials: "TT"

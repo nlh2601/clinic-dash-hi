@@ -1,5 +1,5 @@
 ClinicDash HI 🏥🌺
-A machine learning-powered health equity dashboard for Hawaii, visualizing and predicting access to care by ZIP code.
+A prototype machine learning-powered health equity dashboard for Hawaii, visualizing and predicting access to care by ZIP code.
 
 📌 Overview
 ClinicDash HI maps healthcare equity across Hawaii using public health data, ZIP-level statistics, and machine learning (XGBoost). It helps nonprofits, clinics, and policymakers visualize which communities are underserved — and how that may change over time.
@@ -42,7 +42,7 @@ Prediction: Trained an XGBoost regressor on slope and 2024 values to predict the
 
 Evaluation: Compared predictions with 2025 ground truth from "generated.csv".
 
-Data Used: https://drive.google.com/drive/folders/1FQByYa9tuVZwGRNsiWEm5aJhPNJP7eep?usp=sharing
+Data Used: [https://drive.google.com/drive/folders/1FQByYa9tuVZwGRNsiWEm5aJhPNJP7eep?usp=sharing](url)
 
 📚 Data Sources
 U.S. Census American Community Survey (ACS)
@@ -63,8 +63,6 @@ Jiho Sung
 Ty Sunahara
 Johnny Chen
 Taiko Tyau
-
-Feel free to include your teammates and roles here if applicable.
 
 📬 Contact
 If you're a clinic, nonprofit, or policymaker interested in partnering or building on this project, please reach out at:

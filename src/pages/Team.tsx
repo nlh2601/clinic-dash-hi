@@ -92,7 +92,6 @@ const Team = () => {
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
               <div className="text-center mb-6">
                 <Avatar className="w-24 h-24 mx-auto mb-4">
-                  <AvatarImage src={member.image} alt={member.name} />
                   <AvatarFallback className="text-lg font-semibold bg-gradient-to-br from-blue-500 to-teal-500 text-white">
                     {member.initials}
                   </AvatarFallback>

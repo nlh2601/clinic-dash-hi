@@ -24,27 +24,11 @@ const Team = () => {
       initials: "JS"
     },
     {
-      name: "Taiko Tyau",
-      role: "Policy Advisor & Community Liaison",
-      bio: "Taiko bridges the gap between data and decision-making. He translates ClinicDashHi's findings into practical policy recommendations and ensures community voices are heard in our work. His experience spans public health advocacy and legislative outreach.",
-      email: "clinicdashhi@gmail.com",
-      image: "/taikochef.jpg",
-      initials: "TT"
-    },
-    {
-      name: "Johnny Chen",
-      role: "Geographic Information Systems Specialist",
-      bio: "Johnny creates spatial visualizations that reveal patterns in healthcare access across Hawaii. He brings ClinicDashHi's data to life through interactive maps and geospatial tools, helping stakeholders quickly identify where care is most needed.",
-      email: "clinicdashhi@gmail.com",
-      image: "/johnnychef.jpg",
-      initials: "JC"
-    },
-    {
       name: "Ty Sunahara",
       role: "Community Health Researcher",
       bio: "Ty grounds ClinicDashHi's work in real-world needs. He gathers on-the-ground feedback, engages with local organizations, and ensures our data reflects lived experiences. His work strengthens the link between analytics and authentic community impact.",
       email: "clinicdashhi@gmail.com",
-      image: "/tychef.jpg",
+      image: "",
       initials: "TS"
     }
   ];

@@ -61,8 +61,7 @@ Contributors:
 Nathanael Hui
 Jiho Sung
 Ty Sunahara
-Johnny Chen
-Taiko Tyau
+
 
 📬 Contact
 If you're a clinic, nonprofit, or policymaker interested in partnering or building on this project, please reach out at:

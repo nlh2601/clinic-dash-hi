@@ -77,11 +77,10 @@ const Data = () => {
         </section>
 
         <Tabs defaultValue="overview" className="w-full">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="data">Datasets</TabsTrigger>
             <TabsTrigger value="maps">Interactive Maps</TabsTrigger>
-            <TabsTrigger value="budgeting">Budgeting Simulation</TabsTrigger>
             <TabsTrigger value="simulator">Resource Simulator</TabsTrigger>
           </TabsList>
 
@@ -265,41 +264,6 @@ const Data = () => {
                       <span className="text-sm text-gray-600">Low Equity (50.0-100.0)</span>
                     </div>
                   </div>
-                </div>
-              </div>
-            </section>
-          </TabsContent>
-
-          <TabsContent value="budgeting" className="space-y-16">
-            <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Calculator className="w-8 h-8 text-green-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Budgeting Simulation</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Interactive tools to simulate budget allocations and their projected impact on health equity outcomes.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Calculator className="w-6 h-6 text-gray-500" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Coming Soon</h3>
-                <p className="text-gray-600">
-                  We're developing an advanced budgeting simulation tool that will allow you to:
-                </p>
-                <ul className="text-gray-600 mt-4 space-y-2 text-left max-w-md mx-auto">
-                  <li>• Model different funding scenarios</li>
-                  <li>• Predict impact on health equity metrics</li>
-                  <li>• Compare intervention strategies</li>
-                  <li>• Generate budget recommendations</li>
-                </ul>
-                <div className="mt-6">
-                  <p className="text-sm text-gray-500">
-                    This feature will integrate Python-based simulation models for real-time budget analysis.
-                  </p>
                 </div>
               </div>
             </section>

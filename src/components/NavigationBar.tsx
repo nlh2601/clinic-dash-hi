@@ -17,32 +17,32 @@ const NavigationBar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-sm border-b border-blue-100 sticky top-0 z-50">
+    <nav className="bg-background/95 backdrop-blur-md shadow-elegant border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
+              <MapPin className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">ClinicDashHi</h1>
-              <p className="text-sm text-gray-600">Hawaii Health Equity Index - 2025 Forecast</p>
+              <h1 className="text-xl font-bold text-foreground">ClinicDashHi</h1>
+              <p className="text-sm text-muted-foreground">Hawaii Health Equity Index - 2025 Forecast</p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-smooth hover-lift ${
                   isActive(item.path)
-                    ? 'bg-blue-100 text-blue-700 font-semibold'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                    ? 'bg-primary text-primary-foreground font-semibold shadow-glow'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                 }`}
               >
                 <item.icon className="w-4 h-4" />
-                <span>{item.label}</span>
+                <span className="hidden sm:block">{item.label}</span>
               </Link>
             ))}
           </div>

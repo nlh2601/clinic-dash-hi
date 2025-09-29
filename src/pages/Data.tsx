@@ -77,11 +77,12 @@ const Data = () => {
         </section>
 
         <Tabs defaultValue="overview" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="data">Datasets</TabsTrigger>
             <TabsTrigger value="maps">Interactive Maps</TabsTrigger>
             <TabsTrigger value="budgeting">Budgeting Simulation</TabsTrigger>
+            <TabsTrigger value="simulator">Resource Simulator</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-16">
@@ -299,6 +300,77 @@ const Data = () => {
                   <p className="text-sm text-gray-500">
                     This feature will integrate Python-based simulation models for real-time budget analysis.
                   </p>
+                </div>
+              </div>
+            </section>
+          </TabsContent>
+
+          <TabsContent value="simulator" className="space-y-16">
+            <section className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+              <div className="p-6 border-b border-gray-200">
+                <div className="flex items-center space-x-3 mb-4">
+                  <Calculator className="w-6 h-6 text-blue-600" />
+                  <h2 className="text-2xl font-bold text-gray-900">Health Policy Resource Simulator</h2>
+                </div>
+                <p className="text-gray-600 mb-6">
+                  Interactive simulation tool for budget allocation across health policy categories. 
+                  Explore how different funding strategies impact health equity indicators across Hawaii ZIP codes.
+                </p>
+                
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-sm text-gray-600">
+                      <span className="font-semibold">Features:</span> Budget Allocation • Health Indicators • ZIP Code Analysis • Export Results
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <a 
+                      href="https://clinic-dash-simulation.streamlit.app/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm font-medium"
+                    >
+                      <span>Open in New Tab</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="h-[800px]">
+                  <iframe
+                    src="https://clinic-dash-simulation.streamlit.app/?embedded=true"
+                    title="Health Policy Resource Simulator"
+                    className="w-full h-full border-0"
+                    allow="clipboard-write"
+                  />
+                </div>
+              </div>
+              
+              <div className="p-6 bg-gray-50 border-t border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">How to Use the Simulator</h3>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Policy Categories</h4>
+                    <ul className="space-y-1">
+                      <li>• <strong>Clinics:</strong> Healthcare facility investments</li>
+                      <li>• <strong>Campaigns:</strong> Public health awareness programs</li>
+                      <li>• <strong>Jobs:</strong> Employment and economic development</li>
+                      <li>• <strong>Equity:</strong> Social determinants interventions</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Health Indicators</h4>
+                    <ul className="space-y-1">
+                      <li>• Diabetes prevalence and management</li>
+                      <li>• Employment rates and stability</li>
+                      <li>• Overall health equity index</li>
+                      <li>• Community health outcomes</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </section>

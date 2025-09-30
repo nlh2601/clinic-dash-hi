@@ -13,17 +13,18 @@ const HeroSection = () => {
     <section className="bg-gradient-subtle py-20 pt-36 md:pt-28 lg:pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left relative z-10">
             <div className="mb-4">
-              <span className="bg-gradient-primary bg-clip-text text-transparent text-lg font-semibold">
+              <span className="text-primary text-lg font-semibold">
                 ClinicDashHi
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Hawaii Health Equity
-              <span className="bg-gradient-hero bg-clip-text text-transparent block">
+              <span className="block">
                 Index Forecast
               </span>
+              <div className="w-32 h-1 bg-gradient-hero rounded-full mt-2"></div>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Predicting 2025 health equity outcomes at the ZIP code level using machine learning 
@@ -44,7 +45,7 @@ const HeroSection = () => {
                 alt="Earth globe showing global health connectivity" 
                 className="w-96 h-96 rounded-full shadow-elegant object-cover hover-glow transition-smooth"
               />
-              <div className="absolute inset-0 bg-gradient-hero opacity-20 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-hero opacity-20 rounded-full pointer-events-none"></div>
             </div>
           </div>
         </div>
